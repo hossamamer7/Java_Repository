@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Quiz</title>
+		<link rel="stylesheet" href="css/CSS_1.css">
+	</head>
+<body>
+    
+<!-- Start Header-->
+<div class="header">
+    <div class="header_top">
+    <div class="logo">
+        <a href="Home.html"><img src="images/logo.png"/></a>
+    </div>
+    <div class="contact_info">
+        <ul>
+            <li><a href=""><img src="images/mail_icon.png"/><span>hossam.amer666@gmail.com</span></a></li>
+            <li><a href=""><img src="images/phone_icon.png"/><span>01152534352</span></a></li>
+            <li><a class="join" href="sign.html">Join us</a></li>
+        </ul>
+    </div>
+</div>
+<div class="header_bottom">
+    <div class="pages">
+        <div class="left">. </div>
+        <div class="right">
+            <ul class="pages_option">
+                <li><a class="home" href="Home.html">Home</a></li>
+                <li><a class="about" href="about.html" target="_blank">About</a></li>
+                <li><a class="exchange" href="fall_game.html" target="_blank">Play</a></li>
+                <li><a class="services" href="quiz.html" target="_blank">Quiz</a></li>
+                <li><a class="new.html" href="galary.html" target="_blank">Galary</a></li>
+                <li><a class="contact" href="sign.html" target="_blank">Sign up</a></li>
+            </ul>
+        </div>
+    </div>
+</div> 
+<!-- End Header-->
+
+
+<form name="quiz" id="quiz">
+<div id="q">
+    <p>1. How many champions league titles does Milan have ?</p>
+    <p><input type="radio" name="question1" value="5">A. 5</p>
+    <p><input type="radio" name="question1" value="6">B. 6</p>
+    <p><input type="radio" name="question1" value="7">C. 7</p>
+    <p><input type="radio" name="question1" value="8">D. 8</p>
+</div>
+
+<div id="q">
+    <p>2. What is the name of Milan's stadium ?</p>
+    <p><input type="radio" name="question2" value="Artemio Franky">A. Artemio Franky</p>
+    <p><input type="radio" name="question2" value="San Siro">B. San Siro</p>
+    <p><input type="radio" name="question2" value="Friuli">C. Friuli</p>
+    <p><input type="radio" name="question2" value="San Paolo">D. San Paolo</p>
+</div>
+
+<div id="q">
+    <p>3. When was the first time for milan to win champions league ?</p>
+    <p><input type="radio" name="question3" value="1960">A. 1960</p>
+    <p><input type="radio" name="question3" value="1963">B. 1963</p>
+    <p><input type="radio" name="question3" value="1966">C. 1966</p>
+    <p><input type="radio" name="question3" value="1969">D. 1969</p>
+</div>
+
+<div id="q">  
+    <p>4. Who was the manager of milan in 1994's title ?</p>
+    <p><input type="radio" name="question4" value="Nils Liedholm">A. Nils Liedholm</p>
+    <p><input type="radio" name="question4" value="Arrigo Sacchi">B. Arrigo Sacchi</p>
+    <p><input type="radio" name="question4" value="Alberto Zaccheroni">C. Alberto Zaccheroni</p>
+    <p><input type="radio" name="question4" value="Fabio Capello">D. Fabio Capello</p>
+</div>
+
+<div id="q">
+    <p>5. Who is the best scorer for Milan ?</p>
+    <p><input type="radio" name="question5" value="Nordahl">A. Nordahl</p>
+    <p><input type="radio" name="question5" value="Van Basten">B. Van Basten</p>
+    <p><input type="radio" name="question5" value="Shevshenko">C. Shevshenko</p>
+    <p><input type="radio" name="question5" value="george weah">D. george weah</p>
+</div>
+
+
+<input type="button" name="" value="submit" id="button" onclick="check()">
+
+<div id="score">
+
+
+</div>
+
+</form>
+
+
+<script type="text/javascript"> 
+function check()
+{
+    var score = 0;
+    var q1 = document.quiz.question1.value;
+    var q2 = document.quiz.question2.value;
+    var q3 = document.quiz.question3.value;
+    var q4 = document.quiz.question4.value;
+    var q5 = document.quiz.question5.value;
+    if(q1=="7"){score = score + 20}
+    if(q2=="San Siro"){score = score + 20}
+    if(q3=="1963"){score = score + 20}
+    if(q4=="Fabio Capello"){score = score + 20}
+    if(q5=="Nordahl"){score = score + 20}
+    alert("Your score is: " + score);
+    if (score == 100)
+    {
+        alert("Congratulations, you are a pure Milanista."); 
+    }
+    // document.getElementById("score").innerHTML = "Your score is: " + score; 
+    // if (score == 100)
+    // {
+    //     document.getElementById("score").innerHTML = "Your score is: " + score + "  ..Congratulations, you are a pure Milanista.";
+    // }
+}  
+
+
+</script>
+
+
+</body>
+</html>

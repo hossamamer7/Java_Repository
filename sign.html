@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Registration</title>
+        <link rel="stylesheet" href="css/CSS_1.css">
+        <style>
+            .correct {
+                border: 2px solid green;
+            }
+            .wrong {
+                border: 2px solid red;
+            }
+        </style>
+	</head>
+<body>
+    
+<!-- Start Header-->
+<div class="header">
+    <div class="header_top">
+    <div class="logo">
+        <a href="Home.html"><img src="images/logo.png"/></a>
+    </div>
+    <div class="contact_info">
+        <ul>
+            <li><a href=""><img src="images/mail_icon.png"/><span>hossam.amer666@gmail.com</span></a></li>
+            <li><a href=""><img src="images/phone_icon.png"/><span>01152534352</span></a></li>
+            <li><a class="join" href="sign.html">Join us</a></li>
+        </ul>
+    </div>
+</div>
+<div class="header_bottom">
+    <div class="pages">
+        <div class="left">. </div>
+        <div class="right">
+            <ul class="pages_option">
+                <li><a class="home" href="Home.html">Home</a></li>
+                <li><a class="about" href="about.html" target="_blank">About</a></li>
+                <li><a class="exchange" href="fall_game.html" target="_blank">Play</a></li>
+                <li><a class="services" href="quiz.html" target="_blank">Quiz</a></li>
+                <li><a class="new.html" href="galary.html" target="_blank">Galary</a></li>
+                <li><a class="contact" href="sign.html" target="_blank">Sign up</a></li>
+            </ul>
+        </div>
+    </div>
+</div> 
+<!-- End Header-->
+
+<form action="submit.html" method="POST" class="form" onsubmit="return validateForm()">
+    <div id="field">
+        First Name
+        <input type ="text" name = "fname" placeholder="First name" id="input1"/>
+        <span id = "f" style="color: red"></span>
+        <p class="error"></p>
+    </div>
+    <div id="field">
+        Second Name
+        <input type ="text" name = "sname" placeholder="Second name" id="input2"/>
+        <span id = "s" style="color: red"></span>
+        <p class="error"></p>
+    </div>
+    <div id="field">
+        User Name
+        <input type ="text" name = "uname" placeholder="Enter your Username" id="input3"/>
+        <span id = "u" style="color: red"> </span>
+        <p class="error"></p>
+    </div>
+    <div id="field">
+        E-mail
+        <input type="text" name="mail" placeholder="Enter your Email" id="input4"/> 
+        <span id = "m" style="color: red"> </span>
+        <p class="error"></p> 
+    </div>
+    <div id="field">
+        Password
+        <input type ="password" name = "password" placeholder="Enter your password" id="input5"/>
+        <span id = "p" style="color: red"> </span>
+        <p class="error"></p>
+    </div>
+    <div id="field">
+        Mobile Number
+        <input type ="text" name = "num" placeholder="Enter your mobile number" id="input6"/>
+        <span id = "n" style="color: red"> </span>
+        <p class="error"></p>
+    </div>
+
+    <button type="submit">Register</button>
+
+
+
+</form>
+
+
+
+<script>
+    function validateForm()
+    {
+    var check1;    
+    var check2;
+    var check3;
+    var check4;
+    var check5;
+    var check6;    
+   
+    var mailformat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var letters = /^[a-zA-Z]+$/;
+    var _firstName = document.getElementById("input1");
+    var _secondName = document.getElementById("input2");
+    var username = document.getElementById("input3");
+    var email = document.getElementById("input4");
+    var password = document.getElementById("input5");
+    var mobileNumber = document.getElementById("input6");
+    if (_firstName.value.match(letters))
+    {
+        _firstName.className = "correct";
+       _firstName.nextElementSibling.innerHTML = ""
+      /*_firstName.classList.add("correct");*/
+      
+    }
+    else
+    {
+        _firstName.className = "wrong";
+        _firstName.nextElementSibling.innerHTML = "Invalid Name";
+       // _firstName.classList.add("wrong");
+       
+        check1 = false;
+    }
+
+    if (_secondName.value.match(letters))
+    {
+       _secondName.className = "correct";
+        _secondName.nextElementSibling.innerHTML = "";
+    }
+    else
+    {
+        _secondName.nextElementSibling.innerHTML = "Invalid Name";
+       _secondName.className = "wrong";
+        check2 =false;
+    }
+    if (username.value.length<5 || username.value.length>8)
+    {
+        username.className="wrong";
+        username.nextElementSibling.innerHTML="Invalid UserName";
+        check3=false;
+    }
+
+    else{
+        username.className="correct";
+        username.nextElementSibling.innerHTML=" ";
+    }
+
+        var phoneno = /^\(?([0]{1})\)?[]?([1]{1})[]?([0-9]{9})$/;
+
+    if (mobileNumber.value.match(phoneno))
+    {
+        mobileNumber.className="correct";
+        mobileNumber.nextElementSibling.innerHTML=" ";
+    }
+    else
+    {
+        mobileNumber.nextElementSibling.innerHTML = "Invalid Number";
+        mobileNumber.className="wrong";
+        check4=false;
+    }
+    if (email.value.match(mailformat))
+    {
+        email.className="correct";
+        email.nextElementSibling.innerHTML=" ";
+    }
+    else
+    {
+        email.nextElementSibling.innerHTML = "Invalid email";
+        email.className="wrong";
+        check5=false;
+    }
+    if (password.value.length<7)
+        {
+            
+            password.className="wrong";
+            password.nextElementSibling.innerHTML="Invalid Password";
+            check6=false;
+        }
+
+    else{
+        password.className="correct";
+        password.nextElementSibling.innerHTML=" ";
+    }
+
+
+    if(check1 == false || check2 == false || check3 == false || check4 == false  || check5 == false || check6 == false)
+    {
+        return false;
+    }
+
+  return true;
+
+    }
+    
+
+</script>

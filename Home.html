@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>AC Milan</title>
+		<link rel="stylesheet" href="css/CSS_1.css">
+	</head>
+<body>
+    
+<!-- Start Header-->
+<div class="header">
+    <div class="header_top">
+    <div class="logo">
+        <a href="Home.html"><img src="images/logo.png"/></a>
+    </div>
+    <div class="contact_info">
+        <ul>
+            <li><a href=""><img src="images/mail_icon.png"/><span>hossam.amer666@gmail.com</span></a></li>
+            <li><a href=""><img src="images/phone_icon.png"/><span>01152534352</span></a></li>
+            <li><a class="join" href="sign.html">Join us</a></li>
+        </ul>
+    </div>
+</div>
+<div class="header_bottom">
+    <div class="pages">
+        <div class="left">. </div>
+        <div class="right">
+            <ul class="pages_option">
+                <li><a class="home" href="Home.html">Home</a></li>
+                <li><a class="about" href="about.html" target="_blank">About</a></li>
+                <li><a class="exchange" href="fall_game.html" target="_blank">Play</a></li>
+                <li><a class="services" href="quiz.html" target="_blank">Quiz</a></li>
+                <li><a class="new.html" href="galary.html" target="_blank">Galary</a></li>
+                <li><a class="contact" href="sign.html" target="_blank">Sign up</a></li>
+            </ul>
+        </div>
+    </div>
+</div> 
+<!-- End Header-->
+
+
+<div style="height: 300px; width: 500px; margin: auto;margin-top: 20px;margin-bottom: 20px;">
+    <img src="images/b1.png" id = "data">
+</div>
+<div style="text-align: center;">
+    <h1 id="hi"></h1>
+    <h1></h1>
+    <h1 id="clock"></h1>
+</div>
+
+
+<div style="margin-left: 40%; ">
+    <div id="_red" onclick="red()">
+        Change BackGround color to red
+    </div>
+    <div id="_blue"  onclick="blue()">
+        Change BackGround color to blue
+    </div>
+    <div id="random"  onclick="random()">
+        Change BackGround color to Random
+    </div>
+</div>
+
+
+<script type="text/javascript">
+        function red()
+        { 
+            document.body.style.backgroundColor = "red";
+        }
+        function blue()
+        { 
+            document.body.style.backgroundColor = "blue";
+        }
+        function random()
+        { 
+            document.body.style.backgroundColor = "blue";
+        }
+        function random()
+        {
+            var red = Math.floor(Math.random() * 255);
+            var green = Math.floor(Math.random() * 255);
+            var blue = Math.floor(Math.random() * 255);
+            var c = 'rgb('+red+','+green+','+blue+')';
+            document.body.style.backgroundColor = c;
+        }
+
+
+Hi();
+showTime();
+
+    function Hi()
+    {
+        var name = prompt("Enter your name");
+        var welcome = document.getElementById("hi")
+        var myDate = new Date();
+        var h = myDate.getHours();                
+        if(h >=6 && h < 12)
+            {
+                welcome.innerHTML = "Good Morning, " + name;
+            }
+        else if(h >= 12 && h < 18)
+            {
+                welcome.innerHTML = "Good afternoon, " + name;
+            }
+        else if(h >= 18 && h < 24)
+            {
+                welcome.innerHTML = "Good Evening, " + name;
+            }
+            else if(h >= 0 && h < 6)
+            {
+                welcome.innerHTML = "Good Night, " + name;
+            }
+    }
+
+    setInterval(showTime, 1000); 
+        function showTime() { 
+            let time = new Date(); 
+            let hour = time.getHours(); 
+            let min = time.getMinutes(); 
+            let sec = time.getSeconds(); 
+            am_pm = "AM"; 
+  
+            if (hour > 12) { 
+                hour -= 12; 
+                am_pm = "PM"; 
+            } 
+            if (hour == 0) { 
+                hr = 12; 
+                am_pm = "AM"; 
+            } 
+  
+            hour = hour < 10 ? "0" + hour : hour; 
+            min = min < 10 ? "0" + min : min; 
+            sec = sec < 10 ? "0" + sec : sec; 
+  
+            let currentTime = hour + ":"  
+                + min + ":" + sec +" "+ am_pm; 
+  
+            document.getElementById("clock") 
+                .innerHTML = currentTime; 
+        } 
+  
+        showTime();
+
+        var imgArray = ['images/b1.png','images/b2.png','images/b3.png','images/b4.png','images/b5.png'];
+                    
+                    image_show();     
+                       
+                function image_show()
+                    {
+                        var random = Math.floor(Math.random()*5);
+                        document.getElementById("data").src=imgArray[random];
+                        setTimeout(image_show,3000);
+                    }
+   
+
+</script>
+
+
+</body>
+</html>
